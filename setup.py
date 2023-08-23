@@ -49,13 +49,13 @@ setup(
     ],
     extras_require={
         "develop": [
-            'pytest',
-            'pytest-mock',
-            'pytest-cov',
-            'pytest-html',
-            'sphinx',
-            'pip-licenses',
-            'jupyter'],
+            'pytest==7.4.0',
+            'pytest-mock==3.11.1',
+            'pytest-cov==4.1.0',
+            'pytest-html==3.2.0',
+            'pip-licenses==4.3.2',
+            'notebook==7.0.2',
+            'sphinx'],
     },
     entry_points={
     },
