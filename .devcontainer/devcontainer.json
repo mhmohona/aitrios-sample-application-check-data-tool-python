@@ -43,7 +43,9 @@
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
-
+	
+	"forwardPorts": [5000],
+	
 	// for git submodules: https://docs.github.com/ja/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces
 	"customizations": {
 		"codespaces": {
