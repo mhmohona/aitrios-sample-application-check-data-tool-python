@@ -75,17 +75,17 @@ This repository provides sample code for a [Flask](https://flask.palletsprojects
 
 ### Restrictions
 
-None
+- Only images and inference results up to 10 hours after the inference start time can be acquired.
 
 ## Get support
 
-- [Contact us](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/contact-us/)
+- [Contact us](https://support.aitrios.sony-semicon.com/hc/en-us/requests/new/)
 
 ## See also
 
 - [Get Started](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/guides/)
-- [aitrios-sdk-console-access-lib-python](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-python)
-- [aitrios-sdk-cloud-app-sample-python](https://github.com/SonySemiconductorSolutions/aitrios-sdk-cloud-app-sample-python)
+- [aitrios-sdk-console-access-lib-python](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-python/tree/v1/main)
+- [aitrios-sdk-cloud-app-sample-python](https://github.com/SonySemiconductorSolutions/aitrios-sdk-cloud-app-sample-python/tree/v1/main)
 
 ## Trademark
 
