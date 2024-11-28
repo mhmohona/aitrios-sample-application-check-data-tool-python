@@ -35,12 +35,9 @@ def get_devices():
     try:
         devices_data = get_console_data.get_devices()
         return jsonify(devices_data), 200
-    
+
     except Exception as error:
-        error_message = {
-            "result": "ERROR",
-            "message": str(error)
-        }
+        error_message = {"result": "ERROR", "message": str(error)}
         return jsonify(error_message), 400
 
 
@@ -51,18 +48,15 @@ def get_image_directories():
         if device_id == "":
             error_response = {
                 "result": "ERROR",
-                "message": "Device ID is not specified."
+                "message": "Device ID is not specified.",
             }
             return jsonify(error_response), 400
-        
+
         directories_data = get_console_data.get_image_directories(device_id)
         return jsonify(directories_data), 200
-    
+
     except Exception as error:
-        error_message = {
-            "result": "ERROR",
-            "message": str(error)
-        }
+        error_message = {"result": "ERROR", "message": str(error)}
         return jsonify(error_message), 400
 
 
@@ -70,16 +64,18 @@ def get_image_directories():
 def get_images_and_inferences():
     try:
         device_id = request.args.get("deviceId")
-        sub_directory = request.args.get("imagePath")
+        sub_directory_name = request.args.get("imagePath")
         number_of_images = request.args.get("numberOfImages")
-        if device_id == "" or sub_directory == "" or number_of_images == "":
+        if device_id == "" or sub_directory_name == "" or number_of_images == "":
             error_response = {
                 "result": "ERROR",
-                "message": "Device ID is not specified."
+                "message": "Required parameter is not specified.",
             }
             return jsonify(error_response), 400
-        
-        images_list = get_console_data.get_images(device_id, sub_directory, int(number_of_images))
+
+        images_list = get_console_data.get_images(
+            device_id, sub_directory_name, int(number_of_images)
+        )
         output_list = []
         for image in images_list:
             image_timestamp = image["name"].replace(".jpg", "")
@@ -98,19 +94,13 @@ def get_images_and_inferences():
                 }
                 output_list.append(output)
             except Exception as error:
-                error_message = {
-                    "result": "ERROR",
-                    "message": str(error)
-                }
+                error_message = {"result": "ERROR", "message": str(error)}
                 return jsonify(error_message), 400
-            
+
         return jsonify(output_list), 200
-    
+
     except Exception as error:
-        error_message = {
-            "result": "ERROR",
-            "message": str(error)
-        }
+        error_message = {"result": "ERROR", "message": str(error)}
         return jsonify(error_message), 500
 
 
